@@ -1,24 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MathFunctionApp } from "@/components/math-function-app";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Funcio — Aprenda Funções Matemáticas" },
+      {
+        name: "description",
+        content:
+          "Explore funções matemáticas de forma interativa. Ajuste parâmetros, visualize gráficos e domine funções afins, quadráticas e muito mais.",
+      },
+      { property: "og:title", content: "Funcio — Aprenda Funções Matemáticas" },
+      {
+        property: "og:description",
+        content:
+          "Explore funções matemáticas de forma interativa. Ajuste parâmetros, visualize gráficos e domine funções afins, quadráticas e muito mais.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <MathFunctionApp />;
 }
