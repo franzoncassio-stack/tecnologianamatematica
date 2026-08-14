@@ -163,7 +163,7 @@ export function FunctionGraph({ a, b, width = 800, height = 500 }: FunctionGraph
         ) : null
       )}
 
-      <path d={path} fill="none" stroke="var(--brand-primary)" strokeWidth={3} strokeLinecap="round" />
+      <path d={path} fill="none" stroke="var(--brand-primary)" strokeWidth={3} strokeLinecap="round" clipPath="url(#graph-area)" />
 
       {rootInRange && (
         <circle cx={toSvgX(rootX)} cy={toSvgY(0)} r={5} fill="var(--brand-secondary)" stroke="white" strokeWidth={2}>
