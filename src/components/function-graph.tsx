@@ -79,6 +79,9 @@ export function FunctionGraph({ a, b, width = 800, height = 500 }: FunctionGraph
         <pattern id="grid" width={scaleX} height={scaleY} patternUnits="userSpaceOnUse">
           <path d={`M ${scaleX} 0 L 0 0 0 ${scaleY}`} fill="none" stroke="var(--slate-200)" strokeWidth={1} />
         </pattern>
+        <clipPath id="graph-area">
+          <rect x={padding.left} y={padding.top} width={graphWidth} height={graphHeight} />
+        </clipPath>
       </defs>
 
       <rect
