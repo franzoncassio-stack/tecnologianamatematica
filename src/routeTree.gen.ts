@@ -10,33 +10,74 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AfimRouteImport } from './routes/afim'
+import { Route as ExponencialRouteImport } from './routes/exponencial'
+import { Route as LogaritmicaRouteImport } from './routes/logaritmica'
+import { Route as QuadraticaRouteImport } from './routes/quadratica'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AfimRoute = AfimRouteImport.update({
+  id: '/afim',
+  path: '/afim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExponencialRoute = ExponencialRouteImport.update({
+  id: '/exponencial',
+  path: '/exponencial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogaritmicaRoute = LogaritmicaRouteImport.update({
+  id: '/logaritmica',
+  path: '/logaritmica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuadraticaRoute = QuadraticaRouteImport.update({
+  id: '/quadratica',
+  path: '/quadratica',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/afim': typeof AfimRoute
+  '/exponencial': typeof ExponencialRoute
+  '/logaritmica': typeof LogaritmicaRoute
+  '/quadratica': typeof QuadraticaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/afim': typeof AfimRoute
+  '/exponencial': typeof ExponencialRoute
+  '/logaritmica': typeof LogaritmicaRoute
+  '/quadratica': typeof QuadraticaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/afim': typeof AfimRoute
+  '/exponencial': typeof ExponencialRoute
+  '/logaritmica': typeof LogaritmicaRoute
+  '/quadratica': typeof QuadraticaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/afim' | '/exponencial' | '/logaritmica' | '/quadratica'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/afim' | '/exponencial' | '/logaritmica' | '/quadratica'
+  id:
+    '__root__' | '/' | '/afim' | '/exponencial' | '/logaritmica' | '/quadratica'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AfimRoute: typeof AfimRoute
+  ExponencialRoute: typeof ExponencialRoute
+  LogaritmicaRoute: typeof LogaritmicaRoute
+  QuadraticaRoute: typeof QuadraticaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +89,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/afim': {
+      id: '/afim'
+      path: '/afim'
+      fullPath: '/afim'
+      preLoaderRoute: typeof AfimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exponencial': {
+      id: '/exponencial'
+      path: '/exponencial'
+      fullPath: '/exponencial'
+      preLoaderRoute: typeof ExponencialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logaritmica': {
+      id: '/logaritmica'
+      path: '/logaritmica'
+      fullPath: '/logaritmica'
+      preLoaderRoute: typeof LogaritmicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quadratica': {
+      id: '/quadratica'
+      path: '/quadratica'
+      fullPath: '/quadratica'
+      preLoaderRoute: typeof QuadraticaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AfimRoute: AfimRoute,
+  ExponencialRoute: ExponencialRoute,
+  LogaritmicaRoute: LogaritmicaRoute,
+  QuadraticaRoute: QuadraticaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
