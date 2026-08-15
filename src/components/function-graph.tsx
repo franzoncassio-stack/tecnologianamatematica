@@ -1,5 +1,13 @@
 import { useMemo, useState } from "react";
 
+// SVG text content must be locale-independent to avoid SSR hydration mismatches
+// between server (often en-US) and client (e.g. pt-BR uses comma as decimal).
+function formatDecimal(value: number, digits: number): string {
+  const fixed = value.toFixed(digits);
+  return fixed.replace(/\,/g, ".");
+}
+
+
 interface FunctionGraphProps {
   a: number;
   b: number;
