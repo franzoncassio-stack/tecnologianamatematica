@@ -1,3 +1,9 @@
+export interface Params {
+  a: number;
+  b: number;
+  c: number;
+}
+
 export type FunctionKind = "afim" | "quadratica" | "exponencial" | "logaritmica";
 
 export interface ParamDef {
@@ -18,11 +24,11 @@ export interface FunctionDef {
   description: string;
   params: ParamDef[];
   /** returns null when x is outside the domain */
-  evaluate: (p: Record<string, number>, x: number) => number | null;
+  evaluate: (p: Params, x: number) => number | null;
   /** vertical asymptote x value, if any */
-  verticalAsymptote?: (p: Record<string, number>) => number | null;
+  verticalAsymptote?: (p: Params) => number | null;
   /** horizontal asymptote y value, if any */
-  horizontalAsymptote?: (p: Record<string, number>) => number | null;
+  horizontalAsymptote?: (p: Params) => number | null;
 }
 
 export const FUNCTIONS: Record<FunctionKind, FunctionDef> = {
@@ -104,11 +110,15 @@ export const FUNCTION_LIST = [
   FUNCTIONS.logaritmica,
 ];
 
-export function initialParams(def: FunctionDef): Record<string, number> {
-  return Object.fromEntries(def.params.map((p) => [p.name, p.initial]));
+export function initialParams(def: FunctionDef): Params {
+  const out: Params = { a: 0, b: 0, c: 0 };
+  for (const d of def.params) {
+    out[d.name as keyof Params] = d.initial;
+  }
+  return out;
 }
 
-export function formatEquation(def: FunctionDef, p: Record<string, number>): string {
+export function formatEquation(def: FunctionDef, p: Params): string {
   const f = (n: number) => n.toFixed(1).replace(",", ".");
   const sign = (n: number) => (n >= 0 ? "+" : "-");
   switch (def.id) {
