@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { CalculationSteps } from "./calculation-steps";
 import { FunctionGraph } from "./function-graph";
 import { ParameterControl } from "./parameter-control";
 import { Sidebar } from "./sidebar";
 import { HelpCircle } from "lucide-react";
+import { formatDecimal } from "@/lib/math-format";
 
 export function MathFunctionApp() {
   const [a, setA] = useState(2.5);
