@@ -175,12 +175,12 @@ export function FunctionGraph({ a, b, width = 800, height = 500 }: FunctionGraph
 
       {rootInRange && (
         <circle cx={toSvgX(rootX)} cy={toSvgY(0)} r={5} fill="var(--brand-secondary)" stroke="white" strokeWidth={2}>
-          <title>Raiz: ({rootX.toFixed(2)}, 0)</title>
+          <title>Raiz: ({formatDecimal(rootX, 2)}, 0)</title>
         </circle>
       )}
 
       <circle cx={toSvgX(0)} cy={toSvgY(yIntercept)} r={5} fill="var(--emerald-500)" stroke="white" strokeWidth={2}>
-        <title>Interseção Y: (0, {yIntercept.toFixed(2)})</title>
+        <title>Interseção Y: (0, {formatDecimal(yIntercept, 2)})</title>
       </circle>
 
       {hoverPoint && (
@@ -201,7 +201,7 @@ export function FunctionGraph({ a, b, width = 800, height = 500 }: FunctionGraph
             className="text-xs fill-white"
             style={{ fontFamily: "var(--font-sans)" }}
           >
-            f({hoverPoint.x.toFixed(1)}) = {hoverPoint.y.toFixed(1)}
+            f({formatDecimal(hoverPoint.x, 1)}) = {formatDecimal(hoverPoint.y, 1)}
           </text>
         </g>
       )}
