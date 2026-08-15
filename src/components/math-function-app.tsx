@@ -98,6 +98,8 @@ export function MathFunctionApp() {
                 )}
               </div>
             </div>
+
+            <CalculationSteps a={a} b={b} />
           </div>
 
           <div className="col-span-8 flex flex-col gap-6">
