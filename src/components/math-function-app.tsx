@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { CalculationSteps } from "./calculation-steps";
 import { FunctionGraph } from "./function-graph";
 import { ParameterControl } from "./parameter-control";
 import { Sidebar } from "./sidebar";
 import { HelpCircle } from "lucide-react";
+import { formatDecimal } from "@/lib/math-format";
 
 export function MathFunctionApp() {
   const [a, setA] = useState(2.5);
@@ -91,11 +93,13 @@ export function MathFunctionApp() {
                 </button>
                 {showCheck && (
                   <p className="mt-3 text-sm text-center text-emerald-600 font-medium animate-in fade-in slide-in-from-bottom-2">
-                    Equação atual: f(x) = {a.toFixed(1)}x {b >= 0 ? "+" : "-"} {Math.abs(b).toFixed(1)}
+                    Equação atual: f(x) = {formatDecimal(a, 1)}x {b >= 0 ? "+" : "-"} {formatDecimal(Math.abs(b), 1)}
                   </p>
                 )}
               </div>
             </div>
+
+            <CalculationSteps a={a} b={b} />
           </div>
 
           <div className="col-span-8 flex flex-col gap-6">
@@ -118,7 +122,7 @@ export function MathFunctionApp() {
 
               <div className="absolute bottom-8 right-8 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl">
                 <span className="font-display font-medium text-lg">
-                  f(x) = {a.toFixed(1)}x {b >= 0 ? "+" : "-"} {Math.abs(b).toFixed(1)}
+                  f(x) = {formatDecimal(a, 1)}x {b >= 0 ? "+" : "-"} {formatDecimal(Math.abs(b), 1)}
                 </span>
               </div>
             </div>
@@ -127,7 +131,7 @@ export function MathFunctionApp() {
               <div className="bg-white p-4 rounded-xl border border-slate-200 flex flex-col gap-1">
                 <span className="text-xs text-slate-500 font-medium">Raiz da Função</span>
                 <span className="text-lg font-bold text-slate-950 font-display">
-                  {rootX !== null ? `x = ${rootX.toFixed(1)}` : "—"}
+                  {rootX !== null ? `x = ${formatDecimal(rootX, 1)}` : "—"}
                 </span>
               </div>
               <div className="bg-white p-4 rounded-xl border border-slate-200 flex flex-col gap-1">
@@ -144,7 +148,7 @@ export function MathFunctionApp() {
               </div>
               <div className="bg-white p-4 rounded-xl border border-slate-200 flex flex-col gap-1">
                 <span className="text-xs text-slate-500 font-medium">Interseção Y</span>
-                <span className="text-lg font-bold text-slate-950 font-display">(0, {yIntercept.toFixed(1)})</span>
+                <span className="text-lg font-bold text-slate-950 font-display">(0, {formatDecimal(yIntercept, 1)})</span>
               </div>
             </div>
           </div>
