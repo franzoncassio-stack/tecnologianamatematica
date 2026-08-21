@@ -44,7 +44,7 @@ export function Sidebar({ activeItem }: SidebarProps) {
       <div className="p-4 mt-auto">
         <div className="bg-slate-900 rounded-xl p-4 text-white">
           <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">
-            Laboratório
+            Trabalho de Tecnologia
           </p>
           <p className="text-sm font-semibold">Ajuste os coeficientes e veja os cálculos passo a passo.</p>
         </div>

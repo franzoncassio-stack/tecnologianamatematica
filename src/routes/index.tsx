@@ -37,7 +37,7 @@ function Index() {
         </div>
 
         <p className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-4">
-          Laboratório de funções
+          Trabalho de Tecnologia de ensino de Matemática
         </p>
         <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-950 max-w-2xl leading-tight">
           Qual função você quer estudar hoje?
