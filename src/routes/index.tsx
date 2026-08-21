@@ -29,12 +29,6 @@ function Index() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
-        <div className="flex items-center gap-2 mb-12">
-          <div className="size-8 bg-brand-primary rounded flex items-center justify-center text-white font-display font-bold">
-            F
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight text-slate-950">Funcio</span>
-        </div>
 
         <p className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-4">
           Trabalho de Tecnologia na educação de Matemática
