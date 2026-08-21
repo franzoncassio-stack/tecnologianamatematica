@@ -9,16 +9,6 @@ interface SidebarProps {
 export function Sidebar({ activeItem }: SidebarProps) {
   return (
     <aside className="w-64 border-r border-slate-200 bg-white flex-col shrink-0 hidden lg:flex">
-      <div className="p-6 border-b border-slate-200">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="size-8 bg-brand-primary rounded flex items-center justify-center text-white font-display font-bold">
-            F
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight text-slate-950">
-            Funcio
-          </span>
-        </Link>
-      </div>
 
       <nav className="flex-1 p-4 space-y-1">
         <p className="px-3 pb-2 text-xs font-bold uppercase tracking-widest text-slate-400">
