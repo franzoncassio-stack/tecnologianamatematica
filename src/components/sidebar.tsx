@@ -44,8 +44,10 @@ export function Sidebar({ activeItem }: SidebarProps) {
       <div className="p-4 mt-auto">
         <div className="bg-slate-900 rounded-xl p-4 text-white">
           <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">
-            Trabalho de Tecnologia
+            Trabalho de Tecnologia na educação de Matemática
           </p>
+          <p className="text-xs font-medium text-slate-400 mb-1">Prof. Edinei Luis Becher</p>
+          <p className="text-xs font-medium text-slate-400 mb-2">Aluno Cássio Franzon</p>
           <p className="text-sm font-semibold">Ajuste os coeficientes e veja os cálculos passo a passo.</p>
         </div>
       </div>

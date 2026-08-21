@@ -37,8 +37,10 @@ function Index() {
         </div>
 
         <p className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-4">
-          Trabalho de Tecnologia de ensino de Matemática
+          Trabalho de Tecnologia na educação de Matemática
         </p>
+        <p className="text-xs font-semibold text-slate-500 mb-1">Prof. Edinei Luis Becher</p>
+        <p className="text-xs font-semibold text-slate-500 mb-4">Aluno Cássio Franzon</p>
         <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-950 max-w-2xl leading-tight">
           Qual função você quer estudar hoje?
         </h1>
